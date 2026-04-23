@@ -1,18 +1,22 @@
+import type { ReactNode } from "react";
+
 type SectionHeadingProps = {
   align?: "left" | "center";
   className?: string;
-  eyebrow?: string;
+  eyebrow?: ReactNode;
+  eyebrowClassName?: string;
   descriptionClassName?: string;
   theme?: "light" | "dark";
-  title: string;
+  title: ReactNode;
   titleClassName?: string;
-  description?: string;
+  description?: ReactNode;
 };
 
 export default function SectionHeading({
   align = "left",
   className,
   eyebrow,
+  eyebrowClassName,
   descriptionClassName,
   title,
   titleClassName,
@@ -36,7 +40,7 @@ export default function SectionHeading({
   return (
     <div className={["flex flex-col space-y-3", alignmentClasses, className].filter(Boolean).join(" ")}>
       {eyebrow ? (
-        <p className={eyebrowClasses}>{eyebrow}</p>
+        <p className={[eyebrowClasses, eyebrowClassName].filter(Boolean).join(" ")}>{eyebrow}</p>
       ) : null}
       <h2 className={[titleClasses, titleClassName].filter(Boolean).join(" ")}>{title}</h2>
       {description ? (

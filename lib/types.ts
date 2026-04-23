@@ -23,10 +23,10 @@ export type JourneyStepItem = {
 };
 
 export type MarkerCardItem = {
+  code: string;
+  description: string;
   marker: string;
-  summary: string;
-  detail: string;
-  action: string;
+  normalRange: string;
 };
 
 export type ScoreRangeTone = "mint" | "amber" | "orange" | "rose";

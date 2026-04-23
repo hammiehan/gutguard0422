@@ -1,52 +1,318 @@
-import { protocolPlans } from "../../lib/data";
+import { Fira_Code, Inter, Plus_Jakarta_Sans } from "next/font/google";
+
 import Container from "../ui/Container";
-import ProtocolCard from "../ui/ProtocolCard";
-import SectionHeading from "../ui/SectionHeading";
+
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  weight: ["700"],
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["700", "800"],
+  display: "swap",
+});
+
+const plans = [
+  {
+    icon: "\uD83C\uDF31",
+    title: "Trial Protocol",
+    subtitle: "GLIS 0\u201330 \u00B7 First-time users",
+    price: "\u20B1130",
+    oldPrice: "SRP \u20B1150/cap",
+    quantity: "10 caps \u00B7 5 days",
+    schedule: "1 cap morning \u00B7 1 cap evening",
+    titleSizeClassName: "w-[114.76px] min-h-[23px]",
+    subtitleSizeClassName: "w-[184.5px] min-h-[21px]",
+    bullets: ["1 BioScan", "Doctor review", "Free shipping"],
+    cta: "Enroll Trial \u2192",
+    variants: [
+      { label: "Sachet", meta: "10 caps \u00B7 \u20B11,290", active: true },
+      { label: "Bottle", meta: "30 caps \u00B7 \u20B13,800", active: false },
+    ],
+  },
+  {
+    icon: "\u26A1",
+    title: "Start Protocol",
+    subtitle: "GLIS 26\u201350 \u00B7 Mild inflammation",
+    price: "\u20B1115",
+    oldPrice: "SRP \u20B1137/cap",
+    quantity: "40 caps \u00B7 15 days",
+    schedule: "1\u20132 caps morning \u00B7 1 cap evening",
+    titleSizeClassName: "w-[123.77px] min-h-[23px]",
+    subtitleSizeClassName: "w-[116.51px] min-h-[38px]",
+    bullets: ["1 BioScan", "Doctor review & assignment", "Patient portal access", "Free shipping"],
+    cta: "Enroll Trial \u2192",
+  },
+  {
+    icon: "\uD83D\uDD25",
+    title: "Grow Protocol",
+    subtitle: "GLIS 51\u201375 \u00B7 Moderate inflammation",
+    price: "\u20B1103",
+    oldPrice: "SRP \u20B1126/cap",
+    quantity: "120 caps \u00B7 30 days",
+    schedule: "2 caps morning \u00B7 2 caps evening",
+    titleSizeClassName: "w-[128.59px] min-h-[23px]",
+    subtitleSizeClassName: "w-[148.9px] min-h-[38px]",
+    bullets: [
+      "3 BioScans \u2014 track progress",
+      "Assigned attending doctor",
+      "Full patient portal",
+      "Telegram AI assistant",
+      "Free shipping",
+    ],
+    cta: "Enroll Trial \u2192",
+    featured: true,
+    badge: "MOST POPULAR",
+    notice: "\u26A1 Limited doctor slots this week",
+  },
+  {
+    icon: "\uD83D\uDC51",
+    title: "Power Protocol",
+    subtitle: "GLIS 76\u2013100 \u00B7 High inflammation",
+    price: "\u20B187",
+    oldPrice: "SRP \u20B1107/cap",
+    quantity: "400 caps \u00B7 90 days",
+    schedule: "2\u20133 caps morning \u00B7 2\u20133 caps evening",
+    titleSizeClassName: "w-[136.09px] min-h-[23px]",
+    subtitleSizeClassName: "w-[124.75px] min-h-[38px]",
+    bullets: ["3 BioScans", "Priority doctor response", "Full 90-day intervention", "Free shipping"],
+    cta: "Enroll Trial \u2192",
+  },
+] as const;
 
 export default function ProtocolPlans() {
   return (
     <section className="bg-white py-16 sm:py-20" id="plans">
       <Container>
         <div className="space-y-10">
-          <SectionHeading
-            align="center"
-            eyebrow="Your next protocol"
-            title="Doctor-assigned based on your score"
-            description="Not sure which one? Dr Shane assigns the right protocol tier based on your actual BioScan results."
-            titleClassName="text-[#1d33ff]"
-          />
+          <div className="mx-auto flex max-w-[982px] flex-col items-center space-y-4 text-center">
+            <h2
+              className={[
+                plusJakartaSans.className,
+                "h-[66px] w-full max-w-[982px] text-[40px] font-bold leading-[1.05] tracking-[-0.04em] text-[#1D33FF] sm:text-[52px] sm:leading-[57px]",
+              ].join(" ")}
+            >
+              Doctor-assigned based on your score
+            </h2>
+            <p
+              className={[
+                inter.className,
+                "mx-auto min-h-[52.5px] max-w-[566.83px] text-[18px] font-normal leading-[1.7] text-[#1A275F]",
+              ].join(" ")}
+            >
+              Not sure which one? Dr. Shane assigns the right protocol based on your actual
+              BioScan results.
+            </p>
+          </div>
 
-          <div className="grid gap-5 xl:grid-cols-4">
-            {protocolPlans.map((plan) => (
-              <ProtocolCard
+          <div className="grid justify-items-center gap-4 xl:grid-cols-[246.5px_246.5px_246.5px_246.5px] xl:justify-between">
+            {plans.map((plan) => (
+              <article
                 key={plan.title}
-                badge={plan.badge}
-                bullets={plan.bullets}
-                cadence={plan.cadence}
-                cta={plan.cta}
-                featured={plan.featured}
-                price={plan.price}
-                summary={plan.summary}
-                title={plan.title}
-              />
+                className={[
+                  "relative flex h-[668.69px] w-full max-w-[246.5px] flex-col rounded-[18px] border border-[#E3E7F4] bg-white px-5 py-6",
+                  plan.featured ? "border-[#2A35FF] shadow-[0_0_0_1px_#2A35FF]" : "",
+                ].join(" ")}
+              >
+                {plan.badge ? (
+                  <div className="absolute left-1/2 top-0 flex h-[26.14px] w-[119.78px] -translate-x-1/2 items-center justify-center rounded-[10px] bg-[#1D23D8] px-0 py-0">
+                    <span
+                      className={[
+                        inter.className,
+                        "inline-flex h-[14px] w-[96.13px] items-center justify-center whitespace-nowrap text-[11px] font-bold uppercase leading-[18.1px] tracking-[0.66px] text-white",
+                      ].join(" ")}
+                    >
+                      {plan.badge}
+                    </span>
+                  </div>
+                ) : null}
+
+                <div className="flex h-full flex-col">
+                  <div className="space-y-4">
+                    {plan.notice ? (
+                      <div className="space-y-[10px] pt-[34px]">
+                        <div className="inline-flex h-[50.28px] w-[188.5px] items-center rounded-[10px] border border-[#F5C4C4] bg-[#FFF5F5] px-4 py-2">
+                          <span
+                            className={[
+                              inter.className,
+                              "text-[10px] font-semibold leading-[1.3] text-[#F04E4E]",
+                            ].join(" ")}
+                          >
+                            {plan.notice}
+                          </span>
+                        </div>
+                        <span className="block text-[18px] leading-none text-[#FF7A00]">
+                          {plan.icon}
+                        </span>
+                      </div>
+                    ) : (
+                      <div>
+                        <span className="block text-[18px] leading-none text-[#FFB21D]">
+                          {plan.icon}
+                        </span>
+                      </div>
+                    )}
+
+                    <div className="space-y-1">
+                      <h3
+                        className={[
+                          plusJakartaSans.className,
+                          "text-[18px] font-bold leading-[29.7px] tracking-[0] text-[#020B41]",
+                          plan.titleSizeClassName,
+                        ].join(" ")}
+                      >
+                        {plan.title}
+                      </h3>
+                      <p
+                        className={[
+                          inter.className,
+                          "text-[14px] font-normal leading-[21px] tracking-[0] text-[#6B6B71]",
+                          plan.subtitleSizeClassName,
+                        ].join(" ")}
+                      >
+                        {plan.subtitle}
+                      </p>
+                    </div>
+
+                    {"variants" in plan ? (
+                      <div className="flex gap-2">
+                        {plan.variants.map((variant) => (
+                          <div
+                            key={variant.label}
+                            className={[
+                              "flex min-h-[48px] w-[70px] flex-col items-center justify-center rounded-[8px] border px-2 text-center",
+                              variant.active
+                                ? "border-[#2A35FF] bg-[#1D23D8] text-white"
+                                : "border-[#2C3566] bg-white text-[#4E556A]",
+                            ].join(" ")}
+                          >
+                            <span
+                              className={[
+                                inter.className,
+                                "text-[10px] font-semibold leading-[1.2]",
+                              ].join(" ")}
+                            >
+                              {variant.label}
+                            </span>
+                            <span
+                              className={[
+                                inter.className,
+                                "text-[10px] font-normal leading-[1.2]",
+                              ].join(" ")}
+                            >
+                              {variant.meta}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    ) : null}
+
+                    <div className="space-y-1">
+                      <div className="flex items-end gap-1">
+                        <span
+                          className={[
+                            plusJakartaSans.className,
+                            "text-[28px] font-bold leading-none tracking-[-0.04em] text-[#101C63]",
+                          ].join(" ")}
+                        >
+                          {plan.price}
+                        </span>
+                        <span
+                          className={[
+                            inter.className,
+                            "pb-1 text-[18px] font-medium leading-none text-[#6F7489]",
+                          ].join(" ")}
+                        >
+                          /cap
+                        </span>
+                      </div>
+                      <p
+                        className={[
+                          inter.className,
+                          "text-[11px] font-normal leading-[1.35] text-[#8A8E9D]",
+                        ].join(" ")}
+                      >
+                        per capsule \u00B7 <span className="line-through">{plan.oldPrice}</span>
+                      </p>
+                      <p
+                        className={[
+                          inter.className,
+                          "text-[14px] font-normal leading-[1.5] text-[#6C7186]",
+                        ].join(" ")}
+                      >
+                        {plan.quantity}
+                      </p>
+                    </div>
+
+                    <div className="inline-flex rounded-[10px] bg-[#F1F1F1] px-3 py-3">
+                      <span
+                        className={[
+                          inter.className,
+                          "text-[11px] font-normal leading-[1.45] text-[#7B7F8E]",
+                        ].join(" ")}
+                      >
+                        {plan.schedule}
+                      </span>
+                    </div>
+
+                    <ul className="space-y-2">
+                      {plan.bullets.map((bullet) => (
+                        <li
+                          key={bullet}
+                          className={[
+                            inter.className,
+                            "flex items-start gap-2 text-[14px] font-normal leading-[1.45] text-[#4F5568]",
+                          ].join(" ")}
+                        >
+                          <span className="mt-[2px] text-[12px] leading-none text-[#16B86B]">
+                            {"\u2713"}
+                          </span>
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <a
+                    className={[
+                      inter.className,
+                      "mt-auto inline-flex h-[36px] items-center justify-center self-center rounded-full border text-[14px] font-semibold leading-none transition-colors",
+                      plan.featured
+                        ? "w-[145px] border-[#1D23D8] bg-[#1D23D8] text-white"
+                        : "w-[174px] border-[#2A35FF] bg-white text-[#1D23D8]",
+                    ].join(" ")}
+                    href="#top"
+                  >
+                    {plan.cta}
+                  </a>
+                </div>
+              </article>
             ))}
           </div>
 
-          <div className="rounded-full bg-[#eef2ff] px-5 py-3 text-center text-sm text-[#6673a0]">
-            Your plan is not guessed. It is tied to your blood panel and Lifestyle Inflammation
-            Score, then reviewed by a physician before you begin.
-          </div>
-
-          <div className="rounded-[1.5rem] bg-[#eff8f4] p-5">
-            <div className="space-y-2">
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#138766]">
-                GutGuard reassurance guarantee
-              </p>
-              <p className="text-sm leading-6 text-[#58736a]">
-                If your doctor determines your bloodwork is incomplete after upload, the team will
-                tell you before a full protocol tier is assigned.
-              </p>
-            </div>
+          <div className="mx-auto flex min-h-[61.09px] w-full max-w-[1040px] items-center justify-center rounded-[18px] border border-[#DDE5FF] bg-[#EEF3FF] px-6 py-4 text-center">
+            <p
+              className={[
+                inter.className,
+                "text-[14px] font-normal leading-[1.45] text-[#7D8191]",
+              ].join(" ")}
+            >
+              Not sure which protocol is right for you?{" "}
+              <a className="font-semibold text-[#1D4FFF]" href="#top">
+                Check your Lifestyle Inflammation Score first
+              </a>{" "}
+              <span className="text-[#7D8191]">
+                {"\u2014"} Dr. Shane assigns the right one.
+              </span>
+            </p>
           </div>
         </div>
       </Container>

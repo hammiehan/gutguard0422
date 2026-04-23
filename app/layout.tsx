@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import { Manrope } from "next/font/google";
 
+import Navbar from "@/components/layout/Navbar";
+
 import "./globals.css";
 
 const manrope = Manrope({
@@ -17,6 +19,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body className={manrope.variable}>
+        <Navbar />
         <div id="root">{children}</div>
       </body>
     </html>

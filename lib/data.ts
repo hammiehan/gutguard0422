@@ -27,7 +27,8 @@ export const gutGuardNavLinks: NavLinkItem[] = [
 
 export const heroBullets: HeroBulletItem[] = [
   { label: "Doctor review within 24 hours" },
-  { label: "Protocols matched to your real bloodwork" },
+  { label: "Any Philippine lab accepted" },
+  { label: "Free shipping nationwide" },
 ];
 
 export const trustStats: TrustStatItem[] = [
@@ -37,7 +38,7 @@ export const trustStats: TrustStatItem[] = [
   },
   {
     value: "94%",
-    label: "of GutGuard patients (n=127) show measurable LIFS improvement after one protocol",
+    label: "of GutGuard patients (n=127) show measurable GLIIS improvement after one full protocol",
   },
   {
     value: "<24h",
@@ -76,92 +77,102 @@ export const journeySteps: JourneyStepItem[] = [
 ];
 
 export const journeyLabs: ChipItem[] = [
-  { label: "hs-CRP / Inflammation" },
-  { label: "HbA1c / Blood sugar" },
-  { label: "Triglycerides" },
-  { label: "HDL Cholesterol" },
-  { label: "White Blood Cells" },
-  { label: "Lymphocytes" },
+  { label: "Hi-Precision Diagnostics" },
+  { label: "MedLab GenSan" },
+  { label: "Philippine Red Cross Labs" },
+  { label: "LabCorp Philippines" },
+  { label: "St. Luke's Medical Labs" },
+  { label: "The Medical City" },
+  { label: "Makati Medical Center" },
+  { label: "Any accredited PH lab" },
 ];
 
 export const bioScanMarkers: MarkerCardItem[] = [
   {
+    code: "CRP",
     marker: "C-Reactive Protein",
-    summary: "Tracks systemic inflammation.",
-    detail: "Often elevated when immune stress and gut irritation are both present.",
-    action: "See what it means",
+    description:
+      "The primary direct marker of systemic inflammation. The clearest signal that your body is in a state of chronic stress.",
+    normalRange: "Normal: <1.0 mg/L",
   },
   {
+    code: "WBC",
     marker: "White Blood Cells",
-    summary: "Signals baseline immune load.",
-    detail: "A high or low count can reflect how activated the immune system has become.",
-    action: "View the threshold",
+    description:
+      "Elevated WBC with no active infection signals chronic low-grade inflammation — your immune system is quietly overactivated.",
+    normalRange: "Normal: 4.5–11.0 ×10^9/L",
   },
   {
+    code: "NEUT",
     marker: "Neutrophils",
-    summary: "Helps identify innate immune activity.",
-    detail: "Useful when persistent low-grade inflammation is already visible elsewhere.",
-    action: "Learn why it matters",
+    description:
+      "High neutrophils with high CRP confirms an active inflammatory burden. A key immune imbalance signal.",
+    normalRange: "Normal: 50–70%",
   },
   {
+    code: "LYMPH",
     marker: "Lymphocytes",
-    summary: "Shows adaptive immune balance.",
-    detail: "Provides a second lens when infections, stress, or immune fatigue are involved.",
-    action: "Read the signal",
+    description:
+      "Low lymphocytes alongside high neutrophils — a hallmark of chronic gut-driven inflammation.",
+    normalRange: "Normal: 20–40%",
   },
   {
-    marker: "ESR",
-    summary: "Captures inflammatory drift over time.",
-    detail: "Pairs with other markers when symptoms feel chronic but scattered.",
-    action: "See the range",
+    code: "GLU",
+    marker: "Fasting Glucose",
+    description:
+      "Elevated fasting glucose is both a cause and consequence of gut inflammation. Your microbiome directly regulates insulin sensitivity.",
+    normalRange: "Normal: 70–99 mg/dL",
   },
   {
+    code: "TRIG",
     marker: "Triglycerides",
-    summary: "Reads metabolic and inflammatory overlap.",
-    detail: "Important when digestion, weight change, and energy swings show up together.",
-    action: "Review the threshold",
+    description:
+      "High triglycerides signal metabolic inflammation — one of the most commonly elevated markers in Filipino patients.",
+    normalRange: "Normal: <150 mg/dL",
   },
   {
+    code: "HDL",
     marker: "HDL Cholesterol",
-    summary: "Helps frame recovery capacity.",
-    detail: "Lower HDL can show up alongside stubborn inflammation and poor resilience.",
-    action: "See why it matters",
+    description:
+      "Low HDL is strongly linked to gut dysbiosis. GutGuard consistently raises HDL as the microbiome restores.",
+    normalRange: "Normal: >40 (M) / >50 (F)",
   },
   {
-    marker: "Albumin / Globulin",
-    summary: "Flags protein balance and inflammation load.",
-    detail: "Useful when gut barrier strain and immune burden may be compounding each other.",
-    action: "More on this marker",
+    code: "ALT",
+    marker: "Alanine Aminotransferase",
+    description:
+      "Elevated ALT indicates gut-liver axis inflammation — a direct result of gut permeability allowing toxins to reach the liver.",
+    normalRange: "Normal: 7–56 U/L",
   },
 ];
 
 export const scoreRanges: ScoreRangeItem[] = [
   {
-    range: "0-25",
+    range: "0–25",
     label: "Optimal",
-    description: "Minimal systemic inflammation. Your biomarkers are relatively quiet.",
-    action: "View ideal score",
+    description: "No significant inflammation detected. Maintenance protocol recommended.",
+    action: "→ Trial or Start",
     tone: "mint",
   },
   {
-    range: "26-50",
-    label: "Mild inflammation",
-    description: "Early immune strain. The right intervention now may reduce escalation.",
-    action: "See what changed",
+    range: "26–50",
+    label: "Mild Inflammation",
+    description: "Early markers present. The ideal intervention window — fully reversible.",
+    action: "→ Start Protocol",
     tone: "amber",
   },
   {
-    range: "51-75",
+    range: "51–75",
     label: "Moderate",
-    description: "Active inflammatory signals. Your body may need a more targeted protocol.",
-    action: "Why it matters",
+    description: "Active systemic inflammation. Fatigue, poor sleep, bloating common. Measurable change within 30 days.",
+    action: "→ Grow Protocol",
     tone: "orange",
   },
   {
-    range: "76-100",
-    label: "High inflammation",
-    description: "Persistent inflammatory load. Intervention is prioritized first.",
-    action: "Review protocol",
+    range: "76–100",
+    label: "High Inflammation",
+    description: "Significant inflammatory burden. Doctor review is priority. Full 90-day intervention needed.",
+    action: "→ Power Protocol",
     tone: "rose",
   },
 ];

@@ -42,7 +42,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 bg-[#fbfaf7]/95 backdrop-blur-sm">
+    <header className="relative z-40 bg-[#fbfaf7]">
       <Container>
         <div className="flex min-h-[4.75rem] items-center justify-between gap-4">
           <a
@@ -70,7 +70,7 @@ export default function Navbar() {
 
           <div className="hidden lg:block">
             <Button
-              className="h-[38px] min-w-[131.08px] bg-[#0305C6] px-5 py-0 text-[12px] font-semibold tracking-[-0.01em] text-white hover:bg-[#0204a8]"
+              className="h-[38px] w-[131.08px] !bg-[#0305C6] px-0 py-0 text-[12px] font-semibold leading-[38px] tracking-[0] !text-[#FFFFFF] hover:!bg-[#0305C6]"
               href="#plans"
             >
               Get My Score

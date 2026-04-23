@@ -1,4 +1,3 @@
-import Navbar from "@/components/layout/Navbar";
 import BioScanReads from "@/components/sections/BioScanReads";
 import CategoryChipRail from "@/components/sections/CategoryChipRail";
 import ComparisonTable from "@/components/sections/ComparisonTable";
@@ -18,7 +17,6 @@ import TrustStats from "@/components/sections/TrustStats";
 export default function HomePage() {
   return (
     <main className="bg-[#fbfaf7]">
-      <Navbar />
       <Hero />
       <TrustStats />
       <CategoryChipRail />
