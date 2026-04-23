@@ -20,7 +20,31 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const plans = [
+type PlanVariant = {
+  label: string;
+  meta: string;
+  active: boolean;
+};
+
+type Plan = {
+  icon: string;
+  title: string;
+  subtitle: string;
+  price: string;
+  oldPrice: string;
+  quantity: string;
+  schedule: string;
+  titleSizeClassName: string;
+  subtitleSizeClassName: string;
+  bullets: string[];
+  cta: string;
+  variants?: PlanVariant[];
+  featured?: boolean;
+  badge?: string;
+  notice?: string;
+};
+
+const plans: Plan[] = [
   {
     icon: "\uD83C\uDF31",
     title: "Trial Protocol",
@@ -86,7 +110,7 @@ const plans = [
     bullets: ["3 BioScans", "Priority doctor response", "Full 90-day intervention", "Free shipping"],
     cta: "Enroll Trial \u2192",
   },
-] as const;
+];
 
 export default function ProtocolPlans() {
   return (
@@ -182,7 +206,7 @@ export default function ProtocolPlans() {
                       </p>
                     </div>
 
-                    {"variants" in plan ? (
+                    {plan.variants ? (
                       <div className="flex gap-2">
                         {plan.variants.map((variant) => (
                           <div
