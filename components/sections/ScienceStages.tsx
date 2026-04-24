@@ -82,9 +82,9 @@ const timeline = [
 
 export default function ScienceStages() {
   return (
-    <section className="bg-white py-16 sm:py-20" id="science">
+    <section className="bg-white py-12 sm:min-h-[1040px] sm:py-0" id="science">
       <Container>
-        <div className="space-y-14">
+        <div className="space-y-14 sm:pt-[88px]">
           <div className="mx-auto flex max-w-[887px] flex-col items-center space-y-5 text-center">
             <p
               className={[

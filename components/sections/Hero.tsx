@@ -1,4 +1,4 @@
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Fira_Code, Inter, Plus_Jakarta_Sans } from "next/font/google";
 
 import { heroBullets } from "../../lib/data";
 import Button from "../ui/Button";
@@ -13,6 +13,12 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400"],
+  display: "swap",
+});
+
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  weight: ["700"],
   display: "swap",
 });
 
@@ -55,9 +61,9 @@ const heroBulletSizeClasses = [
 
 export default function Hero() {
   return (
-    <section className="overflow-hidden bg-[#fbfaf7] py-12 sm:py-16 lg:py-20" id="top">
+    <section className="overflow-hidden bg-[#fbfaf7] py-12 sm:min-h-[1080px] sm:py-0" id="top">
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-16">
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-16 lg:pt-[132px]">
           <div className="w-full max-w-[501.14px] space-y-7">
             <div className="inline-flex h-[39.09px] items-center rounded-full border border-[rgba(220,38,38,0.2)] bg-[rgba(220,38,38,0.09)] px-4 text-[12px] font-medium text-[#DC2626]">
               {"\u2022"} 68% of Philippine deaths start with chronic inflammation
@@ -115,65 +121,112 @@ export default function Hero() {
             </ul>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[34rem]">
-            <div className="absolute inset-x-0 top-10 h-48 rounded-full bg-[#eef2ff] blur-3xl" />
-            <div className="relative mx-auto h-[611.61px] w-full max-w-[450.86px] rounded-[20px] border border-[rgba(255,255,255,0.13)] bg-white/95 px-5 py-6 shadow-[0_24px_70px_rgba(12,18,80,0.18)] sm:px-6 sm:py-7 lg:w-[450.86px]">
-              <div className="space-y-6">
-                <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.16em] text-[#8b92ae]">
+          <div className="relative mx-auto w-full max-w-[450.86px]">
+            <div className="absolute inset-x-0 top-8 h-[220px] rounded-full bg-[#eef2ff] blur-[68px]" />
+            <div className="relative mx-auto h-[611.61px] w-full max-w-[450.86px] rounded-[20px] bg-[#FFFFFF] px-[29px] pb-[30px] pt-[31px] shadow-[0_42px_64px_rgba(15,23,42,0.22),0_12px_24px_rgba(15,23,42,0.14)] lg:w-[450.86px]">
+              <div className="flex h-full flex-col">
+                <div
+                  className={[
+                    inter.className,
+                    "flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9CA3AF]",
+                  ].join(" ")}
+                >
                   <span>Lifestyle Inflammation Score</span>
-                  <span className="text-[#3ac77a]">{"\u2022"} Sample</span>
+                  <span className="normal-case tracking-normal text-[#34D399]">{"\u2022"} Sample</span>
                 </div>
 
-                <div className="flex justify-center">
-                  <div className="relative flex h-[156px] w-[156px] items-center justify-center rounded-full border-[9px] border-[#7c7c7c]">
+                <div className="mt-[30px] flex justify-center">
+                  <div className="relative flex h-[175px] w-[175px] items-center justify-center rounded-full border-[10px] border-[#7A7A7A]">
                     <div className="text-center">
-                      <p className="text-[58px] font-semibold tracking-tight text-[#d97706]">74</p>
-                      <p className="-mt-2 text-[10px] font-medium uppercase tracking-[0.16em] text-[#9aa1b9]">
+                      <p
+                        className={[
+                          plusJakartaSans.className,
+                          "text-[58px] font-bold leading-none tracking-[-0.04em] text-[#DF7A00]",
+                        ].join(" ")}
+                      >
+                        74
+                      </p>
+                      <p
+                        className={[
+                          inter.className,
+                          "mt-[10px] text-[11px] font-medium leading-none text-[#8D8D95]",
+                        ].join(" ")}
+                      >
                         / 100
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <p className="text-center text-[14px] font-semibold text-[#e58a17]">
+                <p
+                  className={[
+                    plusJakartaSans.className,
+                    "mt-[24px] text-center text-[14px] font-bold leading-none text-[#F08A00]",
+                  ].join(" ")}
+                >
                   Moderate inflammation
                 </p>
 
-                <div className="space-y-3 px-1">
+                <div className="mt-[24px] space-y-[22px]">
                   {scoreRows.map((row) => (
                     <div
                       key={row.label}
-                      className="grid grid-cols-[minmax(0,1fr)_auto_auto_auto] items-center gap-2 text-sm"
+                      className={[
+                        inter.className,
+                        "grid grid-cols-[minmax(0,1fr)_44px_44px_64px] items-center gap-x-[8px] text-[14px] leading-none",
+                      ].join(" ")}
                     >
-                      <span className="text-[#5f657b]">{row.label}</span>
                       <span
-                        className={
+                        className={[
+                          inter.className,
+                          "text-[14px] font-normal text-[#44444A]",
+                        ].join(" ")}
+                      >
+                        {row.label}
+                      </span>
+                      <span
+                        className={[
                           row.tone === "alert"
-                            ? "font-semibold text-[#ff6b6b]"
-                            : "font-medium text-[#6b7280]"
-                        }
+                            ? `${firaCode.className} text-right text-[14px] font-bold tabular-nums text-[#F87171]`
+                            : `${firaCode.className} text-right text-[14px] font-bold tabular-nums text-[#9CA3AF]`,
+                        ].join(" ")}
                       >
                         {row.value}
                       </span>
-                      <span className="text-[#a0a5b7]">{row.unit}</span>
                       <span
                         className={[
-                          "rounded-full px-2 py-0.5 text-[11px] font-semibold",
-                          row.tone === "neutral"
-                            ? "text-[#6b7280]"
-                            : "bg-[#fff1f3] text-[#ff6b6b]",
+                          row.tone === "alert"
+                            ? `${firaCode.className} text-left text-[14px] font-bold text-[#F87171]`
+                            : `${firaCode.className} text-left text-[14px] font-bold text-[#9CA3AF]`,
                         ].join(" ")}
                       >
-                        {row.tone === "alert"
-                          ? `${row.status === "Low" ? "\u2193" : "\u2191"} ${row.status}`
-                          : row.status}
+                        {row.unit}
                       </span>
+                      {row.tone === "alert" ? (
+                        <span
+                          className={[
+                            inter.className,
+                            "justify-self-end inline-flex h-[24px] min-w-[58px] items-center justify-center rounded-full bg-[#FFF1F3] px-[10px] text-[11px] font-bold text-[#F87171]",
+                          ].join(" ")}
+                        >
+                          {row.status === "Low" ? "\u2193" : "\u2191"} {row.status}
+                        </span>
+                      ) : (
+                        <span
+                          className={[
+                            inter.className,
+                            "min-w-[58px] justify-self-end text-right text-[11px] font-bold text-[#7E7E84]",
+                          ].join(" ")}
+                        >
+                          {row.status}
+                        </span>
+                      )}
                     </div>
                   ))}
                 </div>
 
                 <Button
-                  className="h-[42px] w-full !bg-[#0305C6] py-0 text-[13px] font-semibold !text-[#FFFFFF] hover:!bg-[#0305C6]"
+                  className="mt-auto h-[52px] w-full rounded-full !bg-[#1D23D8] py-0 text-[18px] font-semibold !text-[#FFFFFF] hover:!bg-[#1D23D8]"
                   href="#plans"
                 >
                   Get My Real Score {"\u2192"}

@@ -82,8 +82,8 @@ export type ReviewCardItem = {
   after: string;
   improvement: string;
   quote: string;
-  patient: string;
-  note: string;
+  initials: string;
+  protocol: string;
 };
 
 export type KnowledgeTabItem = {

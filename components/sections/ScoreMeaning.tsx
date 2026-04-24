@@ -25,20 +25,21 @@ const inter = Inter({
 
 export default function ScoreMeaning() {
   return (
-    <section className="bg-white py-16 sm:py-20">
+    <section className="bg-white py-16 sm:pb-[72px] sm:pt-0">
       <Container>
-        <div className="space-y-10">
+        <div className="space-y-10 sm:mx-auto sm:max-w-[1160px] sm:pt-[58px]">
           <SectionHeading
             align="left"
+            className="max-w-[760px] !space-y-[18px]"
             eyebrow="YOUR GLIS RESULT"
             title="What your score means"
             description="Scored 0–100 from your eight markers. Higher means more systemic inflammation."
-            titleClassName={`${plusJakartaSans.className} !text-[52px] !font-bold !text-[#020B41]`}
+            titleClassName={`${plusJakartaSans.className} !text-[52px] !font-bold !leading-[1.04] !tracking-[-0.04em] !text-[#020B41]`}
             eyebrowClassName={`${firaCode.className} !text-[11px] !font-bold !leading-[18.1px] !tracking-[1.98px] !text-[#1A56DB]`}
-            descriptionClassName={`${inter.className} max-w-[760px] !text-[18px] !font-normal`}
+            descriptionClassName={`${inter.className} max-w-[760px] !text-[18px] !font-normal !leading-[1.55]`}
           />
 
-          <div className="grid gap-4 lg:grid-cols-4">
+          <div className="grid gap-[16px] pt-[12px] lg:grid-cols-4">
             {scoreRanges.map((range) => (
               <ScoreRangeCard
                 key={range.range}

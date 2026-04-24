@@ -319,29 +319,29 @@ export const patientReviews: ReviewCardItem[] = [
   {
     before: "82",
     after: "48",
-    improvement: "-34 pts",
+    improvement: "↓34 pts",
     quote:
-      "My CRP finally moved after years of guessing on supplements. The protocol gave me a clear order.",
-    patient: "Mara, 34",
-    note: "Re-scored after 12 weeks",
+      '"My CRP dropped from 4.2 to 1.1 in one cycle. The fatigue I had been blaming on night shifts for two years — that was inflammation. It is gone."',
+    initials: "MS",
+    protocol: "Grow Protocol · name changed for privacy",
   },
   {
     before: "64",
     after: "32",
-    improvement: "-32 pts",
+    improvement: "↓32 pts",
     quote:
-      "The doctor review made the difference. I stopped stacking random products and followed one plan.",
-    patient: "Aris, 41",
-    note: "Matched to Grow Protocol",
+      `"Three years of joint pain I assumed was age. Dr. Shane's first note after my scan said it was systemic inflammation, not arthritis. Six weeks later my score dropped 32 points and the pain was measurably better."`,
+    initials: "LR",
+    protocol: "Power Protocol · name changed for privacy",
   },
   {
     before: "55",
     after: "28",
-    improvement: "-27 pts",
+    improvement: "↓27 pts",
     quote:
-      "I could see why each marker mattered. That made it much easier to stay consistent for the full cycle.",
-    patient: "Nina, 29",
-    note: "Lifestyle Inflammation Score follow-up",
+      '"55 down to 28 in one Grow Protocol cycle. My internist at my annual checkup asked what I had changed. I showed her the BioScan report."',
+    initials: "CT",
+    protocol: "Grow Protocol · name changed for privacy",
   },
 ];
 
@@ -415,42 +415,37 @@ export const faqItems: FaqItem[] = [
 
 export const footerColumns: FooterColumnItem[] = [
   {
-    title: "Product",
+    title: "Protocol",
     links: [
       { href: "#top", label: "Check My Score" },
+      { href: "#bioscan", label: "The 8 Markers" },
       { href: "#science", label: "The Science" },
       { href: "#plans", label: "Pricing" },
     ],
   },
   {
-    title: "Resources",
+    title: "Support",
     links: [
-      { href: "#journey", label: "How It Works" },
       { href: "#knowledge", label: "Dosing Guide" },
+      { href: "#knowledge", label: "Shipping" },
+      { href: "#knowledge", label: "Safety Info" },
       { href: "#faq", label: "FAQ" },
     ],
   },
   {
-    title: "Support",
+    title: "Company",
     links: [
-      { href: "#reviews", label: "Patient Results" },
-      { href: "#knowledge", label: "Shipping" },
-      { href: "#knowledge", label: "Safety Info" },
-    ],
-  },
-  {
-    title: "Contact",
-    links: [
-      { href: "mailto:gutguard@example.com", label: "gutguard@example.com" },
+      { href: "#top", label: "About GutGuard" },
+      { href: "#science", label: "gutguard.ph/science" },
       { href: "#top", label: "Privacy Policy" },
-      { href: "#top", label: "gutguard.ph" },
+      { href: "#top", label: "gutguard.ph/legal" },
     ],
   },
 ];
 
 export const footerBadges: FooterBadgeItem[] = [
   { label: "SEC Registered" },
-  { label: "FDA Listed" },
-  { label: "PH Doctor Reviewed" },
-  { label: "Metro Manila Fulfilled" },
+  { label: "FDA Notified" },
+  { label: "LTO Licensed" },
+  { label: "Halal Certified" },
 ];

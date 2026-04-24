@@ -106,9 +106,9 @@ const comparisonCellSizeClasses: Record<
 
 export default function ComparisonTable() {
   return (
-    <section className="bg-[#020B41] py-16 sm:py-20">
+    <section className="bg-[#020B41] py-12 sm:h-[1010.83px] sm:py-0">
       <Container>
-        <div className="space-y-12">
+        <div className="space-y-12 sm:pt-[116px]">
           <div className="space-y-6 text-left">
             <p
               className={[

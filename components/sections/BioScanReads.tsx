@@ -20,9 +20,9 @@ const firaCode = Fira_Code({
 
 export default function BioScanReads() {
   return (
-    <section className="bg-[#142344] py-16 sm:py-20">
+    <section className="bg-[#142344] py-16 sm:h-[1035.8px] sm:py-0">
       <Container>
-        <div className="space-y-10">
+        <div className="space-y-10 sm:pt-[108px]">
           <SectionHeading
             eyebrow="The 8 Markers"
             eyebrowClassName={`!text-[#5B8EF0] ${firaCode.className}`}

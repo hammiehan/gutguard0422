@@ -56,7 +56,7 @@ const plans: Plan[] = [
     titleSizeClassName: "w-[114.76px] min-h-[23px]",
     subtitleSizeClassName: "w-[184.5px] min-h-[21px]",
     bullets: ["1 BioScan", "Doctor review", "Free shipping"],
-    cta: "Enroll Trial \u2192",
+    cta: "Enroll: Trial \u2192",
     variants: [
       { label: "Sachet", meta: "10 caps \u00B7 \u20B11,290", active: true },
       { label: "Bottle", meta: "30 caps \u00B7 \u20B13,800", active: false },
@@ -73,7 +73,7 @@ const plans: Plan[] = [
     titleSizeClassName: "w-[123.77px] min-h-[23px]",
     subtitleSizeClassName: "w-[116.51px] min-h-[38px]",
     bullets: ["1 BioScan", "Doctor review & assignment", "Patient portal access", "Free shipping"],
-    cta: "Enroll Trial \u2192",
+    cta: "Enroll Now \u2192",
   },
   {
     icon: "\uD83D\uDD25",
@@ -92,7 +92,7 @@ const plans: Plan[] = [
       "Telegram AI assistant",
       "Free shipping",
     ],
-    cta: "Enroll Trial \u2192",
+    cta: "Enroll Now \u2192",
     featured: true,
     badge: "MOST POPULAR",
     notice: "\u26A1 Limited doctor slots this week",
@@ -108,15 +108,15 @@ const plans: Plan[] = [
     titleSizeClassName: "w-[136.09px] min-h-[23px]",
     subtitleSizeClassName: "w-[124.75px] min-h-[38px]",
     bullets: ["3 BioScans", "Priority doctor response", "Full 90-day intervention", "Free shipping"],
-    cta: "Enroll Trial \u2192",
+    cta: "Enroll Now \u2192",
   },
 ];
 
 export default function ProtocolPlans() {
   return (
-    <section className="bg-white py-16 sm:py-20" id="plans">
+    <section className="bg-white py-16 sm:min-h-[1450px] sm:py-0" id="plans">
       <Container>
-        <div className="space-y-10">
+        <div className="space-y-10 sm:pt-[102px]">
           <div className="mx-auto flex max-w-[982px] flex-col items-center space-y-4 text-center">
             <h2
               className={[
@@ -143,11 +143,11 @@ export default function ProtocolPlans() {
                 key={plan.title}
                 className={[
                   "relative flex h-[668.69px] w-full max-w-[246.5px] flex-col rounded-[18px] border border-[#E3E7F4] bg-white px-5 py-6",
-                  plan.featured ? "border-[#2A35FF] shadow-[0_0_0_1px_#2A35FF]" : "",
+                  plan.featured ? "overflow-hidden border-[#2A35FF] shadow-[0_0_0_1px_#2A35FF]" : "",
                 ].join(" ")}
               >
                 {plan.badge ? (
-                  <div className="absolute left-1/2 top-0 flex h-[26.14px] w-[119.78px] -translate-x-1/2 items-center justify-center rounded-[10px] bg-[#1D23D8] px-0 py-0">
+                  <div className="absolute left-1/2 top-[-1px] flex h-[26.14px] w-[119.78px] -translate-x-1/2 items-center justify-center rounded-b-[10px] bg-[#1D23D8] px-0 py-0">
                     <span
                       className={[
                         inter.className,
@@ -162,7 +162,7 @@ export default function ProtocolPlans() {
                 <div className="flex h-full flex-col">
                   <div className="space-y-4">
                     {plan.notice ? (
-                      <div className="space-y-[10px] pt-[34px]">
+                      <div className="space-y-[6px] pt-[24px]">
                         <div className="inline-flex h-[50.28px] w-[188.5px] items-center rounded-[10px] border border-[#F5C4C4] bg-[#FFF5F5] px-4 py-2">
                           <span
                             className={[
@@ -264,7 +264,7 @@ export default function ProtocolPlans() {
                           "text-[11px] font-normal leading-[1.35] text-[#8A8E9D]",
                         ].join(" ")}
                       >
-                        per capsule \u00B7 <span className="line-through">{plan.oldPrice}</span>
+                        per capsule <span className="line-through">{plan.oldPrice}</span>
                       </p>
                       <p
                         className={[
@@ -279,8 +279,8 @@ export default function ProtocolPlans() {
                     <div className="inline-flex rounded-[10px] bg-[#F1F1F1] px-3 py-3">
                       <span
                         className={[
-                          inter.className,
-                          "text-[11px] font-normal leading-[1.45] text-[#7B7F8E]",
+                          firaCode.className,
+                          "text-[11px] font-normal leading-[1.45] text-[#6B6B71]",
                         ].join(" ")}
                       >
                         {plan.schedule}
@@ -293,7 +293,7 @@ export default function ProtocolPlans() {
                           key={bullet}
                           className={[
                             inter.className,
-                            "flex items-start gap-2 text-[14px] font-normal leading-[1.45] text-[#4F5568]",
+                            "flex items-start gap-2 text-[14px] font-normal leading-[1.45] text-[#44444A]",
                           ].join(" ")}
                         >
                           <span className="mt-[2px] text-[12px] leading-none text-[#16B86B]">
@@ -308,10 +308,10 @@ export default function ProtocolPlans() {
                   <a
                     className={[
                       inter.className,
-                      "mt-auto inline-flex h-[36px] items-center justify-center self-center rounded-full border text-[14px] font-semibold leading-none transition-colors",
+                      "mt-6 inline-flex h-[35px] items-center justify-center self-center rounded-full border text-[14px] font-semibold leading-none transition-colors",
                       plan.featured
                         ? "w-[145px] border-[#1D23D8] bg-[#1D23D8] text-white"
-                        : "w-[174px] border-[#2A35FF] bg-white text-[#1D23D8]",
+                        : "w-[146px] border-[#2A35FF] bg-white text-[#1D23D8]",
                     ].join(" ")}
                     href="#top"
                   >
@@ -336,6 +336,62 @@ export default function ProtocolPlans() {
               <span className="text-[#7D8191]">
                 {"\u2014"} Dr. Shane assigns the right one.
               </span>
+            </p>
+          </div>
+
+          <div className="mx-auto flex w-full max-w-[1040px] flex-col items-center gap-3">
+            <div className="w-full rounded-[18px] border border-[#CDEDE8] bg-[#F4FCFB] px-[18px] py-[16px]">
+              <div className="flex flex-col items-start gap-[10px]">
+                <div className="relative flex h-[36px] w-[36px] shrink-0 items-center justify-center rounded-full border border-[#B8E6DE] bg-[#DDF6F2] text-[0px] leading-none text-transparent">
+                  <svg
+                    aria-hidden="true"
+                    className="absolute h-[18px] w-[18px]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 3 18 5.5V11c0 4.2-2.5 7.96-6 9-3.5-1.04-6-4.8-6-9V5.5L12 3Z"
+                      fill="#EAF7F4"
+                      stroke="#7ACDBC"
+                      strokeWidth="1.4"
+                    />
+                    <path d="M12 6.2v9.6" stroke="#FF6B57" strokeWidth="1.6" strokeLinecap="round" />
+                    <path d="M10.2 7.8h3.6" stroke="#FF6B57" strokeWidth="1.6" strokeLinecap="round" />
+                  </svg>
+                  🛡️
+                </div>
+                <div className="max-w-[780px] space-y-1">
+                  <h3
+                    className={[
+                      inter.className,
+                      "text-[14px] font-semibold leading-[1.45] text-[#5E6068]",
+                    ].join(" ")}
+                  >
+                    Up to 90-day satisfaction guarantee
+                  </h3>
+                  <p
+                    className={[
+                      inter.className,
+                      "max-w-[780px] text-[14px] font-normal leading-[1.6] text-[#7A7D85]",
+                    ].join(" ")}
+                  >
+                    If your BioScan shows no measurable improvement after completing your
+                    protocol, Dr. Shane reviews and issues a full refund within 5 business
+                    days. No questions asked.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <p
+              className={[
+                inter.className,
+                "text-center text-[10px] font-normal leading-[1.5] text-[#8C8F98]",
+              ].join(" ")}
+            >
+              Patient names changed for privacy. Score data from GutGuard patient portal
+              records, n=127. Individual results vary.
             </p>
           </div>
         </div>

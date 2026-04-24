@@ -37,9 +37,9 @@ const doctorSteps = [
 
 export default function DoctorCredibility() {
   return (
-    <section className="bg-[#020B41] py-16 sm:py-20">
+    <section className="bg-[#020B41] py-16 sm:h-[1066.92px] sm:py-0">
       <Container>
-        <div className="space-y-10">
+        <div className="space-y-10 sm:pt-[118px]">
           <div className="space-y-6 text-left">
             <p
               className={[

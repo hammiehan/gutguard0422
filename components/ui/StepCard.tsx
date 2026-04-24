@@ -7,7 +7,7 @@ type StepCardProps = {
 };
 
 function StepIcon({ step }: Pick<StepCardProps, "step">) {
-  const iconClasses = "h-5 w-5 stroke-[#2453FF] stroke-[1.8] fill-none";
+  const iconClasses = "h-[18px] w-[18px] stroke-[#2453FF] stroke-[1.7] fill-none";
 
   if (step === "STEP 01") {
     return (
@@ -36,19 +36,19 @@ function StepIcon({ step }: Pick<StepCardProps, "step">) {
 
 export default function StepCard({ description, step, title }: StepCardProps) {
   return (
-    <Card className="h-full rounded-[20px] border-[rgba(0,0,0,0.83)] bg-white p-7 shadow-none lg:h-[267.11px] lg:w-[328px]">
+    <Card className="h-full min-h-[205px] rounded-[20px] !border-[rgba(0,0,0,0.83)] !bg-[#FFFFFF] px-[24px] pb-[22px] pt-[26px] shadow-none">
       <div className="flex h-full flex-col">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#4C80FF]">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#4C80FF]">
           {step}
         </p>
 
-        <div className="mt-6 flex h-[43px] w-[43px] items-center justify-center rounded-[11px] border border-[#2453FF] bg-[#B9CCFF]">
+        <div className="mt-[20px] flex h-[34px] w-[34px] items-center justify-center rounded-[9px] border border-[#2453FF] bg-[#B9CCFF]">
           <StepIcon step={step} />
         </div>
 
-        <div className="mt-auto space-y-2">
+        <div className="mt-[46px] space-y-2">
           {title ? <h3 className="text-xl font-semibold tracking-tight text-[#11205f]">{title}</h3> : null}
-          <p className="max-w-[240px] text-[14px] leading-[21px] text-[#7A7A81]">{description}</p>
+          <p className="max-w-[220px] text-[14px] font-normal leading-[1.5] text-[#7A7A81]">{description}</p>
         </div>
       </div>
     </Card>

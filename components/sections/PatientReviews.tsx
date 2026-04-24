@@ -1,33 +1,74 @@
+import { Fira_Code, Inter, Plus_Jakarta_Sans } from "next/font/google";
+
 import { patientReviews } from "../../lib/data";
 import Container from "../ui/Container";
 import ReviewCard from "../ui/ReviewCard";
-import SectionHeading from "../ui/SectionHeading";
+
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  weight: ["700"],
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["700", "800"],
+  display: "swap",
+});
 
 export default function PatientReviews() {
   return (
-    <section className="bg-[#fbfaf7] py-16 sm:py-20" id="reviews">
+    <section className="bg-[#FBFAF7] py-16 sm:min-h-[780px] sm:py-0" id="reviews">
       <Container>
-        <div className="space-y-10">
-          <SectionHeading
-            align="center"
-            eyebrow="Patient results"
-            title="Real scores. Real patients."
-            titleClassName="text-[#1d33ff]"
-          />
+        <div className="space-y-[18px] sm:pt-[116px]">
+          <div className="flex flex-col items-center text-center">
+            <p
+              className={[
+                firaCode.className,
+                "h-[11px] w-[128.9px] text-[11px] font-bold uppercase leading-[18.1px] tracking-[1.98px] text-[#1A56DB]",
+              ].join(" ")}
+            >
+              Patient results
+            </p>
+            <h2
+              className={[
+                plusJakartaSans.className,
+                "mt-[6px] h-[66px] w-full max-w-[642px] text-[40px] font-bold leading-[1.05] tracking-[-0.04em] text-[#0305C6] sm:text-[52px]",
+              ].join(" ")}
+            >
+              Real scores. Real patients.
+            </h2>
+          </div>
 
-          <div className="grid gap-5 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-[1032px] justify-items-center gap-[20px] lg:grid-cols-3">
             {patientReviews.map((review) => (
               <ReviewCard
-                key={review.patient}
+                key={`${review.initials}-${review.before}-${review.after}`}
                 after={review.after}
                 before={review.before}
                 improvement={review.improvement}
-                note={review.note}
-                patient={review.patient}
+                initials={review.initials}
+                protocol={review.protocol}
                 quote={review.quote}
               />
             ))}
           </div>
+
+          <p
+            className={[
+              inter.className,
+              "mx-auto h-[14px] w-full max-w-[597.07px] text-center text-[10px] font-normal leading-[1.5] text-[#8C8F98]",
+            ].join(" ")}
+          >
+            Patient names changed for privacy. Score data from GutGuard patient portal
+            records, n=127. Individual results vary.
+          </p>
         </div>
       </Container>
     </section>
