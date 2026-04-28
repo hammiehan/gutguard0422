@@ -61,11 +61,16 @@ const heroBulletSizeClasses = [
 
 export default function Hero() {
   return (
-    <section className="overflow-hidden bg-[#fbfaf7] py-12 sm:min-h-[1080px] sm:py-0" id="top">
+    <section className="overflow-hidden bg-[#fbfaf7] py-12 sm:min-h-[1200px] sm:py-0" id="top">
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-16 lg:pt-[132px]">
-          <div className="w-full max-w-[501.14px] space-y-7">
-            <div className="inline-flex h-[39.09px] items-center rounded-full border border-[rgba(220,38,38,0.2)] bg-[rgba(220,38,38,0.09)] px-4 text-[12px] font-medium text-[#DC2626]">
+        <div className="grid items-center gap-12 lg:grid-cols-[501.14px_450.86px] lg:justify-between lg:gap-0 lg:pt-[132px]">
+          <div className="w-full max-w-[501.14px] space-y-7 lg:h-[876.28px] lg:w-[501.14px]">
+            <div
+              className={[
+                inter.className,
+                "inline-flex h-[39.09px] items-center rounded-full border border-[rgba(248,113,113,0.2)] bg-[rgba(248,113,113,0.09)] px-4 text-[14px] font-medium leading-[23.1px] tracking-[0] text-[#F87171]",
+              ].join(" ")}
+            >
               {"\u2022"} 68% of Philippine deaths start with chronic inflammation
             </div>
 
@@ -78,10 +83,17 @@ export default function Hero() {
                   "lg:h-[420px] lg:text-[84px] lg:leading-[84px] lg:tracking-[-3.36px]",
                 ].join(" ")}
               >
-                <span className="text-[#020B41]">Most supplements are a guess.</span>{" "}
-                <span className="text-[#0305C6]">Your blood is not.</span>
+                <span className="block text-[#020B41]">Most supplements are a guess.</span>
+                <span className="block max-w-[485.65px] text-[#0305C6] lg:min-h-[190px]">
+                  Your blood is not.
+                </span>
               </h1>
-              <p className="min-h-[178.5px] max-w-[490.45px] text-[18px] font-normal leading-[31.5px] tracking-[0] text-[#44444A]">
+              <p
+                className={[
+                  inter.className,
+                  "min-h-[178.5px] max-w-[490.45px] text-[18px] font-normal leading-[31.5px] tracking-[0] text-[#44444A]",
+                ].join(" ")}
+              >
                 Upload the blood panel you already have from any Philippine laboratory. Your
                 Lifestyle Inflammation Score calculates in 30 seconds from 8 clinical markers. A
                 licensed doctor reads your results personally and prescribes the exact protocol
@@ -91,10 +103,16 @@ export default function Hero() {
 
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
               <Button
-                className="h-[54px] w-[221.17px] gap-2 !bg-[#0305C6] px-0 py-0 text-[14px] font-semibold leading-[54px] !text-[#FFFFFF] hover:!bg-[#0305C6]"
+                className={[
+                  plusJakartaSans.className,
+                  "h-[54px] w-[221.17px] gap-2 rounded-[100px] !bg-[#0305C6] px-0 py-0 text-[16px] font-semibold leading-[100%] !text-[#FFFFFF] hover:!bg-[#0305C6]",
+                ].join(" ")}
                 href="#plans"
               >
-                Check My Score {"\u2192"}
+                <span className="inline-flex w-[125.56px] items-center justify-center">
+                  Check My Score
+                </span>
+                <span aria-hidden="true">{"\u2192"}</span>
               </Button>
             </div>
 
@@ -121,9 +139,9 @@ export default function Hero() {
             </ul>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[450.86px]">
+          <div className="relative mx-auto w-full max-w-[450.86px] lg:w-[450.86px]">
             <div className="absolute inset-x-0 top-8 h-[220px] rounded-full bg-[#eef2ff] blur-[68px]" />
-            <div className="relative mx-auto h-[611.61px] w-full max-w-[450.86px] rounded-[20px] bg-[#FFFFFF] px-[29px] pb-[30px] pt-[31px] shadow-[0_42px_64px_rgba(15,23,42,0.22),0_12px_24px_rgba(15,23,42,0.14)] lg:w-[450.86px]">
+            <div className="relative mx-auto h-[611.61px] w-full max-w-[450.86px] rounded-[20px] border border-[rgba(255,255,255,0.13)] bg-[rgba(255,255,255,0.07)] px-[29px] pb-[30px] pt-[31px] shadow-[0_42px_64px_rgba(15,23,42,0.22),0_12px_24px_rgba(15,23,42,0.14)] lg:w-[450.86px]">
               <div className="flex h-full flex-col">
                 <div
                   className={[

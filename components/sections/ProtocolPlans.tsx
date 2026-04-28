@@ -114,14 +114,14 @@ const plans: Plan[] = [
 
 export default function ProtocolPlans() {
   return (
-    <section className="bg-white py-16 sm:min-h-[1450px] sm:py-0" id="plans">
+    <section className="bg-white py-16 sm:h-[1550.88px] sm:py-0" id="plans">
       <Container>
-        <div className="space-y-10 sm:pt-[102px]">
+        <div className="sm:pt-[191.05px]">
           <div className="mx-auto flex max-w-[982px] flex-col items-center space-y-4 text-center">
             <h2
               className={[
                 plusJakartaSans.className,
-                "h-[66px] w-full max-w-[982px] text-[40px] font-bold leading-[1.05] tracking-[-0.04em] text-[#1D33FF] sm:text-[52px] sm:leading-[57px]",
+                "h-[66px] w-full max-w-[982px] text-[40px] font-bold leading-[1.05] tracking-[-0.04em] text-[#0305C6] sm:text-[52px] sm:leading-[57.2px] sm:tracking-[-1.56px]",
               ].join(" ")}
             >
               Doctor-assigned based on your score
@@ -129,7 +129,7 @@ export default function ProtocolPlans() {
             <p
               className={[
                 inter.className,
-                "mx-auto min-h-[52.5px] max-w-[566.83px] text-[18px] font-normal leading-[1.7] text-[#1A275F]",
+                "mx-auto min-h-[52.5px] max-w-[566.83px] text-[18px] font-normal leading-[31.5px] tracking-[0] text-[#020B41]",
               ].join(" ")}
             >
               Not sure which one? Dr. Shane assigns the right protocol based on your actual
@@ -137,17 +137,19 @@ export default function ProtocolPlans() {
             </p>
           </div>
 
-          <div className="grid justify-items-center gap-4 xl:grid-cols-[246.5px_246.5px_246.5px_246.5px] xl:justify-between">
+          <div className="mt-[76.78px] grid justify-items-center gap-4 xl:grid-cols-[246.5px_246.5px_246.5px_246.5px] xl:justify-between">
             {plans.map((plan) => (
               <article
                 key={plan.title}
                 className={[
-                  "relative flex h-[668.69px] w-full max-w-[246.5px] flex-col rounded-[18px] border border-[#E3E7F4] bg-white px-5 py-6",
-                  plan.featured ? "overflow-hidden border-[#2A35FF] shadow-[0_0_0_1px_#2A35FF]" : "",
+                  "relative flex h-[668.69px] w-full max-w-[246.5px] flex-col rounded-[20px] border border-[#E3E7F4] bg-white px-5 py-6",
+                  plan.featured
+                    ? "overflow-hidden border-[#0305C6] shadow-[0_12px_40px_rgba(0,0,0,0.10)]"
+                    : "border-[rgba(0,0,0,0.09)]",
                 ].join(" ")}
               >
                 {plan.badge ? (
-                  <div className="absolute left-1/2 top-[-1px] flex h-[26.14px] w-[119.78px] -translate-x-1/2 items-center justify-center rounded-b-[10px] bg-[#1D23D8] px-0 py-0">
+                  <div className="absolute left-1/2 top-[-1px] flex h-[26.14px] w-[119.78px] -translate-x-1/2 items-center justify-center rounded-b-[9px] bg-[#0305C6] px-0 py-0">
                     <span
                       className={[
                         inter.className,
@@ -322,11 +324,11 @@ export default function ProtocolPlans() {
             ))}
           </div>
 
-          <div className="mx-auto flex min-h-[61.09px] w-full max-w-[1040px] items-center justify-center rounded-[18px] border border-[#DDE5FF] bg-[#EEF3FF] px-6 py-4 text-center">
+          <div className="mx-auto mt-[35.99px] flex min-h-[61.09px] w-full max-w-[1040px] items-center justify-center rounded-[20px] border border-[rgba(26,86,219,0.12)] bg-[rgba(26,86,219,0.05)] px-6 py-4 text-center">
             <p
               className={[
                 inter.className,
-                "text-[14px] font-normal leading-[1.45] text-[#7D8191]",
+                "w-[806.14px] text-[14px] font-normal leading-[23.1px] tracking-[0] text-[#7D8191]",
               ].join(" ")}
             >
               Not sure which protocol is right for you?{" "}
@@ -339,8 +341,8 @@ export default function ProtocolPlans() {
             </p>
           </div>
 
-          <div className="mx-auto flex w-full max-w-[1040px] flex-col items-center gap-3">
-            <div className="w-full rounded-[18px] border border-[#CDEDE8] bg-[#F4FCFB] px-[18px] py-[16px]">
+          <div className="mx-auto mt-[35.91px] flex w-full max-w-[1040px] flex-col items-center gap-3">
+            <div className="w-full rounded-[20px] border border-[rgba(5,150,105,0.18)] bg-[rgba(5,150,105,0.05)] px-[18px] py-[16px] sm:h-[189.17px]">
               <div className="flex flex-col items-start gap-[10px]">
                 <div className="relative flex h-[36px] w-[36px] shrink-0 items-center justify-center rounded-full border border-[#B8E6DE] bg-[#DDF6F2] text-[0px] leading-none text-transparent">
                   <svg
@@ -387,7 +389,7 @@ export default function ProtocolPlans() {
             <p
               className={[
                 inter.className,
-                "text-center text-[10px] font-normal leading-[1.5] text-[#8C8F98]",
+                "w-[597.07px] text-center text-[11px] font-normal leading-[17.6px] tracking-[0] text-[#6E6E6E]",
               ].join(" ")}
             >
               Patient names changed for privacy. Score data from GutGuard patient portal

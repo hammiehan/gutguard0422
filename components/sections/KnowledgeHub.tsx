@@ -27,12 +27,12 @@ export default function KnowledgeHub() {
   return (
     <section className="bg-white py-16 sm:h-[1144.73px] sm:py-0" id="knowledge">
       <Container>
-        <div className="space-y-8 sm:pt-[103px]">
+        <div className="space-y-8 sm:pt-[155.91px]">
           <div className="space-y-3">
             <p
               className={[
                 firaCode.className,
-                "h-[11px] w-[146.06px] text-[11px] font-bold uppercase leading-[18.1px] tracking-[1.98px] text-[#5B8EF0]",
+                "h-[11px] w-[146.06px] text-[11px] font-bold uppercase leading-[18.15px] tracking-[1.98px] text-[#5B8EF0]",
               ].join(" ")}
             >
               Vital information
@@ -40,7 +40,7 @@ export default function KnowledgeHub() {
             <h2
               className={[
                 plusJakartaSans.className,
-                "h-[66px] w-full max-w-[695px] text-[40px] font-bold leading-[1.05] tracking-[-0.04em] text-[#0305C6] sm:text-[52px]",
+                "h-[66px] w-full max-w-[695px] text-[40px] font-bold leading-[1.05] tracking-[-0.04em] text-[#0305C6] sm:text-[52px] sm:leading-[57.2px] sm:tracking-[-1.56px]",
               ].join(" ")}
             >
               Everything you need to know
@@ -48,14 +48,14 @@ export default function KnowledgeHub() {
             <p
               className={[
                 inter.className,
-                "h-[31.5px] w-full max-w-[559.73px] text-[18px] font-normal leading-[1.55] text-[#1C1C1E]",
+                "h-[31.5px] w-full max-w-[559.73px] text-[18px] font-normal leading-[31.5px] tracking-[0] text-[#1C1C1E]",
               ].join(" ")}
             >
               Dosing, safety, shipping, compliance, and your rights as a patient.
             </p>
           </div>
 
-          <div className="flex h-[48px] w-full max-w-[1040px] flex-wrap gap-[26px]">
+          <div className="flex h-[48px] w-full max-w-[1040px] flex-wrap items-center gap-[26px] rounded-[14px]">
             {tabs.map((tab) => (
               <button
                 key={tab}
@@ -71,7 +71,7 @@ export default function KnowledgeHub() {
           </div>
 
           <div className="grid w-full max-w-[1040px] gap-5 lg:h-[613.91px] lg:grid-cols-2">
-            <div className="rounded-[20px] bg-[#020B41] px-[20px] py-[20px] text-white lg:h-[295.73px] lg:w-[510px]">
+            <div className="rounded-[20px] border border-[rgba(255,255,255,0.71)] bg-[#020B41] px-[20px] py-[20px] text-white lg:h-[295.73px] lg:w-[510px]">
               <div className="space-y-5">
                 <div className="flex items-center gap-[10px]">
                   <div className="flex h-[28px] w-[28px] items-center justify-center rounded-[8px] bg-[rgba(255,255,255,0.08)] text-[13px]">
@@ -131,7 +131,7 @@ export default function KnowledgeHub() {
               </div>
             </div>
 
-            <div className="rounded-[20px] bg-[#020B41] px-[20px] py-[20px] text-white lg:h-[295.73px] lg:w-[510px]">
+            <div className="rounded-[20px] border border-[rgba(255,255,255,0.71)] bg-[#020B41] px-[20px] py-[20px] text-white lg:h-[295.73px] lg:w-[510px]">
               <div className="space-y-5">
                 <div className="flex items-center gap-[10px]">
                   <div className="flex h-[28px] w-[28px] items-center justify-center rounded-[8px] bg-[rgba(255,255,255,0.08)] text-[13px]">
@@ -170,7 +170,7 @@ export default function KnowledgeHub() {
               </div>
             </div>
 
-            <div className="rounded-[20px] bg-[#020B41] px-[20px] py-[20px] text-white lg:h-[298.17px] lg:w-[510px]">
+            <div className="rounded-[20px] border border-[rgba(255,255,255,0.71)] bg-[#020B41] px-[20px] py-[20px] text-white lg:h-[298.17px] lg:w-[510px]">
               <div className="space-y-5">
                 <div className="flex items-center gap-[10px]">
                   <div className="flex h-[28px] w-[28px] items-center justify-center rounded-[8px] bg-[rgba(255,255,255,0.08)] text-[13px]">
@@ -229,7 +229,7 @@ export default function KnowledgeHub() {
               </div>
             </div>
 
-            <div className="rounded-[20px] bg-[#020B41] px-[20px] py-[20px] text-white lg:h-[298.17px] lg:w-[510px]">
+            <div className="rounded-[20px] border border-[rgba(255,255,255,0.71)] bg-[#020B41] px-[20px] py-[20px] text-white lg:h-[298.17px] lg:w-[510px]">
               <div className="space-y-5">
                 <div className="flex items-center gap-[10px]">
                   <div className="flex h-[28px] w-[28px] items-center justify-center rounded-[8px] bg-[rgba(255,255,255,0.08)] text-[13px]">

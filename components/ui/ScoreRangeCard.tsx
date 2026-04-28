@@ -15,10 +15,10 @@ const inter = Inter({
 });
 
 const toneClasses: Record<ScoreRangeTone, string> = {
-  mint: "border border-[#b8e4d8] bg-[#edf6f3]",
-  amber: "border border-[#f2c995] bg-[#fbf2e6]",
-  orange: "border border-[#f0c6b6] bg-[#f9efe9]",
-  rose: "border border-[#f1b7b6] bg-[#fbefef]",
+  mint: "border border-[rgba(5,150,105,0.2)] bg-[rgba(5,150,105,0.07)]",
+  amber: "border border-[rgba(217,119,6,0.2)] bg-[rgba(217,119,6,0.07)]",
+  orange: "border border-[rgba(194,65,12,0.2)] bg-[rgba(194,65,12,0.07)]",
+  rose: "border border-[rgba(220,38,38,0.2)] bg-[rgba(220,38,38,0.07)]",
 };
 
 const rangeClasses: Record<ScoreRangeTone, string> = {
@@ -51,7 +51,12 @@ export default function ScoreRangeCard({
   tone,
 }: ScoreRangeCardProps) {
   return (
-    <div className={["h-[294.7px] w-full max-w-[245px] rounded-[1.5rem] p-9 text-left", toneClasses[tone]].join(" ")}>
+    <div
+      className={[
+        "h-[294.7px] w-full max-w-[245px] rounded-[20px] p-9 text-left sm:w-[245px]",
+        toneClasses[tone],
+      ].join(" ")}
+    >
       <div className="space-y-5">
         <div className="space-y-1">
           <p

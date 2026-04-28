@@ -3,7 +3,6 @@ import { Fira_Code, Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { scoreRanges } from "../../lib/data";
 import Container from "../ui/Container";
 import ScoreRangeCard from "../ui/ScoreRangeCard";
-import SectionHeading from "../ui/SectionHeading";
 
 const firaCode = Fira_Code({
   subsets: ["latin"],
@@ -25,21 +24,38 @@ const inter = Inter({
 
 export default function ScoreMeaning() {
   return (
-    <section className="bg-white py-16 sm:pb-[72px] sm:pt-0">
+    <section className="bg-white py-16 sm:pb-[118px] sm:pt-[138px]">
       <Container>
-        <div className="space-y-10 sm:mx-auto sm:max-w-[1160px] sm:pt-[58px]">
-          <SectionHeading
-            align="left"
-            className="max-w-[760px] !space-y-[18px]"
-            eyebrow="YOUR GLIS RESULT"
-            title="What your score means"
-            description="Scored 0–100 from your eight markers. Higher means more systemic inflammation."
-            titleClassName={`${plusJakartaSans.className} !text-[52px] !font-bold !leading-[1.04] !tracking-[-0.04em] !text-[#020B41]`}
-            eyebrowClassName={`${firaCode.className} !text-[11px] !font-bold !leading-[18.1px] !tracking-[1.98px] !text-[#1A56DB]`}
-            descriptionClassName={`${inter.className} max-w-[760px] !text-[18px] !font-normal !leading-[1.55]`}
-          />
+        <div className="space-y-10 sm:mx-auto sm:w-[1040px]">
+          <div className="sm:w-[583.89px]">
+            <p
+              className={[
+                firaCode.className,
+                "h-[11px] w-[137.48px] text-[11px] font-bold uppercase leading-[18.15px] tracking-[1.98px] text-[#1A56DB]",
+              ].join(" ")}
+            >
+              YOUR GLIS RESULT
+            </p>
+            <h2
+              className={[
+                plusJakartaSans.className,
+                "mt-[22.81px] w-full max-w-[572px] text-[40px] font-bold leading-[44px] tracking-[-1.2px] text-[#020B41] sm:text-[52px] sm:leading-[57.2px] sm:tracking-[-1.56px]",
+              ].join(" ")}
+            >
+              What your score means
+            </h2>
+            <p
+              className={[
+                inter.className,
+                "mt-[14.52px] max-w-[583.89px] text-[18px] font-normal leading-[31.5px] tracking-[0] text-[#6B6B71] sm:h-[52.5px]",
+              ].join(" ")}
+            >
+              Scored 0–100 from your eight markers. Higher means more systemic
+              inflammation.
+            </p>
+          </div>
 
-          <div className="grid gap-[16px] pt-[12px] lg:grid-cols-4">
+          <div className="grid gap-[16px] pt-[18px] md:grid-cols-2 lg:w-[1040px] lg:grid-cols-4 lg:gap-[20px] lg:pt-[46px]">
             {scoreRanges.map((range) => (
               <ScoreRangeCard
                 key={range.range}

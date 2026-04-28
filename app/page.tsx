@@ -16,7 +16,7 @@ import TrustStats from "@/components/sections/TrustStats";
 
 export default function HomePage() {
   return (
-    <main className="bg-[#fbfaf7]">
+    <main className="bg-[#fbfaf7] sm:min-h-[12980.34px]">
       <Hero />
       <TrustStats />
       <CategoryChipRail />

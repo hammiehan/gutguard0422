@@ -2,6 +2,7 @@ import { Fira_Code, Inter, Plus_Jakarta_Sans } from "next/font/google";
 
 type MarkerCardProps = {
   code: string;
+  desktopSizeClassName?: string;
   description: string;
   marker: string;
   normalRange: string;
@@ -25,12 +26,19 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-export default function MarkerCard({ code, description, marker, normalRange }: MarkerCardProps) {
+export default function MarkerCard({
+  code,
+  desktopSizeClassName,
+  description,
+  marker,
+  normalRange,
+}: MarkerCardProps) {
   return (
     <div
       className={[
         inter.className,
         "flex h-full min-h-[270px] flex-col rounded-[20px] border border-[rgba(255,255,255,0.09)] bg-[#020B41] p-6",
+        desktopSizeClassName,
       ].join(" ")}
     >
       <div className="flex h-full flex-col">

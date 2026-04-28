@@ -27,7 +27,7 @@ const stages = [
     description:
       "Patented prebiotic complex selectively nourishes the bacteria that produce anti-inflammatory short-chain fatty acids. Starves pathogenic strains.",
     pill: "Patented Prebiotic Complex",
-    cardClassName: "border-[#BED1FF] bg-[#EFF3FF]",
+    cardClassName: "border-[rgba(26,86,219,0.18)] bg-[rgba(26,86,219,0.09)]",
     stepColor: "text-[#5B8EF0]",
     pillClassName: "border-[#9DB8FF] bg-[#DDE7FF] text-[#85A7FF]",
     stepSizeClassName: "w-[166.53px] h-[11px]",
@@ -41,7 +41,7 @@ const stages = [
     description:
       "Nano-encapsulated target-specific strains survive stomach acid and colonise the exact gut zones where inflammation originates.",
     pill: "Nano-encapsulated Strains",
-    cardClassName: "border-[#B9E7D9] bg-[#EEF9F6]",
+    cardClassName: "border-[rgba(5,150,105,0.18)] bg-[rgba(5,150,105,0.09)]",
     stepColor: "text-[#22C58B]",
     pillClassName: "border-[#9EE3CF] bg-[#DDF6EE] text-[#73D1AF]",
     stepSizeClassName: "w-[166.53px] h-[11px]",
@@ -55,7 +55,7 @@ const stages = [
     description:
       "Urolithin-A activates mitophagy \u2014 clearing damaged mitochondria and rebuilding new ones. L-Tryptophan restores gut-brain signalling and sleep.",
     pill: "Urolithin-A + L-Tryptophan",
-    cardClassName: "border-[#F4D3AF] bg-[#FFF7EE]",
+    cardClassName: "border-[rgba(217,119,6,0.18)] bg-[rgba(217,119,6,0.09)]",
     stepColor: "text-[#FFB21D]",
     pillClassName: "border-[#FFD095] bg-[#FFF1DA] text-[#FFC53A]",
     stepSizeClassName: "w-[174.45px] h-[11px]",
@@ -82,14 +82,14 @@ const timeline = [
 
 export default function ScienceStages() {
   return (
-    <section className="bg-white py-12 sm:min-h-[1040px] sm:py-0" id="science">
+    <section className="bg-white py-12 sm:h-[1124.98px] sm:py-0" id="science">
       <Container>
-        <div className="space-y-14 sm:pt-[88px]">
+        <div className="space-y-14 sm:pt-[167px]">
           <div className="mx-auto flex max-w-[887px] flex-col items-center space-y-5 text-center">
             <p
               className={[
                 firaCode.className,
-                "h-[11px] w-[257.61px] text-[11px] font-bold uppercase leading-[18.1px] tracking-[1.98px] text-[#5B8EF0]",
+                "h-[11px] w-[257.61px] text-[11px] font-bold uppercase leading-[18.15px] tracking-[1.98px] text-[#5B8EF0]",
               ].join(" ")}
             >
               GUTGUARD PROPRIETARY FRAMEWORK
@@ -98,7 +98,7 @@ export default function ScienceStages() {
             <h2
               className={[
                 plusJakartaSans.className,
-                "h-[66px] w-full max-w-[887px] text-[52px] font-bold leading-[54px] tracking-[-0.04em] text-[#020B41]",
+                "h-[66px] w-full max-w-[887px] text-[52px] font-bold leading-[57.2px] tracking-[-1.56px] text-[#020B41]",
               ].join(" ")}
             >
               Three stages. One cascade.
@@ -107,17 +107,26 @@ export default function ScienceStages() {
             <p
               className={[
                 inter.className,
-                "mx-auto min-h-[147px] max-w-[582.11px] text-[18px] font-normal leading-[31.5px] tracking-[0] text-[#A3A3A8]",
+                "mx-auto h-[147px] max-w-[582.11px] text-[18px] font-normal leading-[31.5px] tracking-[0] text-[#A3A3A8]",
               ].join(" ")}
             >
-              The MBS (Mitochondria Bio-regeneration System) is GutGuard&apos;s proprietary protocol
-              {" \u2014 "}built on independently peer-reviewed mechanisms in pre-, pro-, and
-              postbiotic science. The Urolithin-A and L-Tryptophan outcomes in Stage 3 are
-              documented in published clinical research.
+              <>
+                The MBS (Mitochondria Bio-regeneration System) is GutGuard&apos;s
+                <br />
+                proprietary protocol {"\u2014"} built on independently peer-reviewed
+                <br />
+                mechanisms in pre-, pro-, and postbiotic science. The Urolithin-A
+                <br />
+                and L-Tryptophan outcomes in Stage 3 are documented in
+                <br />
+                published
+                <br />
+                clinical research.
+              </>
             </p>
           </div>
 
-          <div className="grid justify-items-center gap-5 lg:grid-cols-[333.33px_333.33px_333.33px] lg:justify-between">
+          <div className="grid justify-items-center gap-5 lg:grid-cols-[333.33px_333.33px_333.34px] lg:justify-between">
             {stages.map((stage) => (
               <div
                 key={stage.step}
@@ -174,17 +183,17 @@ export default function ScienceStages() {
             ))}
           </div>
 
-          <div className="mx-auto min-h-[199px] w-full max-w-[1040px] space-y-8">
+          <div className="mx-auto h-[199px] w-full max-w-[1040px] rounded-[20px] border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.04)] px-8 py-10">
             <p
               className={[
-                firaCode.className,
-                "mx-auto h-[14px] w-[188.04px] text-center text-[11px] font-normal uppercase leading-[18.1px] tracking-[1.98px] text-[#8D8D95]",
+                inter.className,
+                "mx-auto flex h-[14px] w-[188.04px] items-center justify-center whitespace-nowrap text-center text-[11px] font-semibold uppercase leading-[18.15px] tracking-[1.32px] text-[#7E7E84]",
               ].join(" ")}
             >
-              TIMELINE: WHAT TO EXPECT
+              Timeline: What to expect
             </p>
 
-            <div className="grid justify-items-center gap-y-6 md:grid-cols-[188.34px_186.64px_192.65px] md:justify-center md:gap-x-[120px]">
+            <div className="mt-[34px] grid justify-items-center gap-y-6 md:grid-cols-[188.34px_186.64px_192.65px] md:justify-center md:gap-x-[120px]">
               {timeline.map((item) => (
                 <p
                   key={item.text}

@@ -16,6 +16,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 type ReviewCardProps = {
   after: string;
   before: string;
+  quoteSizeClassName?: string;
   improvement: string;
   initials: string;
   protocol: string;
@@ -25,6 +26,7 @@ type ReviewCardProps = {
 export default function ReviewCard({
   after,
   before,
+  quoteSizeClassName,
   improvement,
   initials,
   protocol,
@@ -107,18 +109,37 @@ export default function ReviewCard({
       <p
         className={[
           inter.className,
-          "mt-[14px] max-w-[252px] text-[14px] font-normal italic leading-[1.55] text-[#6B6B71]",
+          "mt-[14px] text-[14px] font-normal italic leading-[23.8px] tracking-[0] text-[#6B6B71]",
+          quoteSizeClassName ?? "max-w-[268.61px] min-h-[88.39px]",
         ].join(" ")}
       >
         {quote}
       </p>
 
-      <div className="mt-auto flex items-center gap-[10px] pt-[16px]">
-        <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full border border-[#E7E3DE] bg-[#F3EFEB]">
+      <div className="flex items-center gap-[10px] pt-[16px]">
+        <div className="relative flex h-[36px] w-[36px] items-center justify-center rounded-[18px] bg-[#EBE9E5]">
+          <svg
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full"
+            viewBox="0 0 36 36"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="1"
+              y="1"
+              width="34"
+              height="34"
+              rx="17"
+              fill="none"
+              stroke="rgba(0,0,0,0.15)"
+              strokeWidth="2"
+              strokeDasharray="6 4"
+            />
+          </svg>
           <span
             className={[
               inter.className,
-              "text-[12px] font-medium leading-none text-[#D6D0CA]",
+              "relative z-[1] text-[12px] font-medium leading-none text-[#D6D0CA]",
             ].join(" ")}
           >
             {initials}
@@ -127,7 +148,7 @@ export default function ReviewCard({
         <p
           className={[
             inter.className,
-            "text-[10px] font-normal leading-[1.3] text-[#929298]",
+            "text-[11px] font-normal leading-[18.15px] tracking-[0] text-[#6E6E6E]",
           ].join(" ")}
         >
           {protocol}

@@ -104,16 +104,27 @@ const comparisonCellSizeClasses: Record<
   },
 };
 
+const featureLabelSizeClasses: Record<string, string> = {
+  "Starting price": "h-[19px] w-[97.59px]",
+  "Baseline inflammation score": "h-[19px] w-[202.06px]",
+  "Doctor-reviewed results": "h-[19px] w-[172.94px]",
+  "Protocol matched to your score": "h-[19px] w-[225.19px]",
+  "Progress tracking via re-scan": "h-[19px] w-[211.44px]",
+  "Urolithin-A postbiotic": "h-[19px] w-[154.06px]",
+  "Free nationwide shipping": "h-[19px] w-[180.26px]",
+  "Satisfaction guarantee": "h-[19px] w-[162.28px]",
+};
+
 export default function ComparisonTable() {
   return (
     <section className="bg-[#020B41] py-12 sm:h-[1010.83px] sm:py-0">
       <Container>
-        <div className="space-y-12 sm:pt-[116px]">
+        <div className="space-y-12 sm:pt-[138.87px]">
           <div className="space-y-6 text-left">
             <p
               className={[
                 firaCode.className,
-                "h-[11px] w-[103.17px] text-[11px] font-bold uppercase leading-[18.1px] tracking-[1.98px] text-[#1A56DB]",
+                "h-[11px] w-[103.17px] text-[11px] font-bold uppercase leading-[18.15px] tracking-[1.98px] text-[#1A56DB]",
               ].join(" ")}
             >
               WHY GUTGUARD
@@ -122,7 +133,7 @@ export default function ComparisonTable() {
             <h2
               className={[
                 plusJakartaSans.className,
-                "h-[66px] w-full max-w-[796px] text-[52px] font-bold leading-[54px] tracking-[-0.04em] text-white",
+                "h-[66px] w-full max-w-[796px] text-[52px] font-bold leading-[57.2px] tracking-[-1.56px] text-white",
               ].join(" ")}
             >
               Not all gut supplements are equal
@@ -131,7 +142,7 @@ export default function ComparisonTable() {
             <p
               className={[
                 inter.className,
-                "min-h-[52.5px] max-w-[557.83px] text-[18px] font-normal leading-[31.5px] tracking-[0] text-[#6B6B71]",
+                "h-[52.5px] max-w-[557.83px] text-[18px] font-normal leading-[31.5px] tracking-[0] text-[#6B6B71]",
               ].join(" ")}
             >
               Generic supplements are cheaper and easier to find. Here is what that tradeoff
@@ -139,47 +150,49 @@ export default function ComparisonTable() {
             </p>
           </div>
 
-          <div className="overflow-x-auto">
+          <div className="h-[564.5px] w-full overflow-x-auto lg:w-[1040px]">
             <div className="min-w-[1040px]">
               <div className="grid grid-cols-[332px_198px_204px_254px] lg:min-h-[564.5px]">
                 <div
                   className={[
                     plusJakartaSans.className,
-                    "flex min-h-[78px] items-center justify-center px-6 text-center text-[16px] font-bold tracking-[0.08em] text-white",
+                    "flex min-h-[78px] items-center justify-center px-6 text-center text-[16px] font-bold leading-[100%] tracking-[1.28px] text-white",
                   ].join(" ")}
                 >
-                  FEATURE
+                  <span className="inline-flex h-[21px] w-[79.04px] items-center justify-center">
+                    FEATURE
+                  </span>
                 </div>
                 <div
                   className={[
                     plusJakartaSans.className,
-                    "flex min-h-[78px] items-center justify-center px-6 text-center text-[16px] font-bold leading-[1.1] text-white",
+                    "flex min-h-[78px] items-center justify-center px-6 text-center text-[16px] font-bold leading-[100%] tracking-[0] text-white",
                   ].join(" ")}
                 >
-                  Generic
-                  <br />
-                  Supplement
+                  <span className="inline-flex h-[42px] w-[96.05px] items-center justify-center text-center">
+                    Generic Supplement
+                  </span>
                 </div>
                 <div
                   className={[
                     plusJakartaSans.className,
-                    "flex min-h-[78px] items-center justify-center px-6 text-center text-[16px] font-bold leading-[1.1] text-white",
+                    "flex min-h-[78px] items-center justify-center px-6 text-center text-[16px] font-bold leading-[100%] tracking-[0] text-white",
                   ].join(" ")}
                 >
-                  Other PH
-                  <br />
-                  Health Apps
+                  <span className="inline-flex h-[42px] w-[95.06px] items-center justify-center text-center">
+                    Other PH Health Apps
+                  </span>
                 </div>
                 <div className="border-l-2 border-r-2 border-[#1A56DB] bg-[rgba(26,86,219,0.2)]">
                   <div
                     className={[
                       plusJakartaSans.className,
-                      "flex min-h-[78px] items-center justify-center px-6 text-center text-[16px] font-bold leading-[1.1] text-white",
+                      "flex min-h-[78px] items-center justify-center px-6 text-center text-[16px] font-bold leading-[100%] tracking-[0] text-white",
                     ].join(" ")}
                   >
-                    GutGuard
-                    <br />
-                    Protocol
+                    <span className="inline-flex h-[42px] w-[77.67px] items-center justify-center text-center">
+                      GutGuard Protocol
+                    </span>
                   </div>
                 </div>
 
@@ -188,10 +201,19 @@ export default function ComparisonTable() {
                     <div
                       className={[
                         inter.className,
-                        "flex min-h-[52px] items-center px-5 py-5 text-[15px] font-medium text-white",
+                        "flex min-h-[52px] items-center px-[22px] py-5 text-[15px] font-medium leading-[22.5px] tracking-[0] text-white",
                       ].join(" ")}
                     >
-                      {row.feature}
+                      <span
+                        className={[
+                          "inline-flex items-center",
+                          featureLabelSizeClasses[row.feature],
+                        ]
+                          .filter(Boolean)
+                          .join(" ")}
+                      >
+                        {row.feature}
+                      </span>
                     </div>
                     <div
                       className={[
